@@ -1,0 +1,11 @@
+@use "../settings/variables" as v;
+
+// GENERIC APP STYLES
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-size: v.$fs-12;
+}
