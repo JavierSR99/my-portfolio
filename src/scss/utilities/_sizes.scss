@@ -1,0 +1,17 @@
+$sizes-map: ( 100 );
+$measures-map: ( vw: vw, vh: vh, per : '%' );
+$measures-keys: map-keys($map: $measures-map);
+
+@each $size in $sizes-map {
+  @each $mea in $measures-keys {
+    $value-mea: map-get($map: $measures-map, $key: $mea);
+
+    .u-w-#{$mea}-#{$size} {
+      width: $size + #{$value-mea};
+    }
+    .u-h-#{$mea}-#{$size} {
+      height: $size + #{$value-mea};
+    }
+
+  }
+}

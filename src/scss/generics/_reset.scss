@@ -1,6 +1,35 @@
-// RESETTING SOME BROWSER DEFAULT STYLES
+@use "../settings/variables" as v;
 
+// RESETTING SOME BROWSER DEFAULT STYLES
 html, body {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+ul {
   margin: 0;
   padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  background-image: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
 }

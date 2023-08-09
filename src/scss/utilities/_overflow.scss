@@ -1,0 +1,15 @@
+$overflow-map: ( auto, scroll, hidden );
+
+@each $value in $overflow-map {
+  .u-ovf-#{$value} {
+    overflow: $value;
+  }
+
+  .u-ovx-#{$value} {
+    overflow-x: $value;
+  }
+
+  .u-ovy-#{$value} {
+    overflow-y: $value;
+  }
+}
