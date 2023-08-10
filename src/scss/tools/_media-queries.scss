@@ -1,0 +1,47 @@
+@use "../settings/variables" as v;
+
+// APP MEDIA-QUERIES
+
+// < 575px
+@mixin xs-device {
+  @media (max-width: (v.$bp-sm - 1)) { @content; }
+}
+
+// >= 576px && < 767px
+@mixin sm-device {
+  @media (min-width: v.$bp-sm) and (max-width: (v.$bp-md - 1)) { @content; }
+}
+
+// >= 768px && <991px
+@mixin md-device {
+  @media (min-width: v.$bp-md) and (max-width: (v.$bp-lg - 1)) { @content; }
+}
+
+// >= 992px && <1199px
+@mixin lg-device {
+  @media (min-width: v.$bp-lg) and (max-width: (v.$bp-xl - 1)) { @content; }
+}
+
+// >= 1200px && < 1399px 
+@mixin xl-device {
+  @media (min-width: v.$bp-xl) and (max-width: (v.$bp-xxl - 1)) { @content; }
+}
+
+// >= 1400px
+@mixin xxl-device {
+  @media (min-width: v.$bp-xxl) { @content; }
+}
+
+/* 
+  HOW TO USE IT:
+
+  element {
+
+      ...
+
+      @include xs-device {
+          ...
+      }
+  }
+
+*/

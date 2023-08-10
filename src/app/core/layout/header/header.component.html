@@ -1,0 +1,27 @@
+<header class="jav-header u-w-per-100 u-bg-dark-secondary u-p-2 u-ds-flex">
+  <ul class="jav-header__options u-ds-flex u-w-per-100">
+    <li class="jav-header__vsc">
+      <img [src]="iconVSC" alt="vsc-icon" width="100%" height="auto">
+    </li>
+    <li *ngFor="let item of listItems" class="jav-header__option u-ms-3 u-color-text-primary">
+      {{ item }}
+    </li>
+  </ul>
+  <p class="jav-header__state u-color-text-primary u-fs-14 u-w-per-100 u-text-center">
+    Javier Sanz - {{ activeRoute }} - Visual Studio Code
+  </p>
+
+  <div class="jav-header__language u-pos-relative u-w-per-100 p-flexce">
+    <div class="jav-header__main p-flexce u-gap-8 u-cursor-pointer u-px-1" (click)="showLangList = !showLangList" #flagSection>
+      <div class="jav-header__flag">
+        <img [src]="'../../../../assets/icons/flags/' + activeLang + '.png'" alt="language" width="100%" height="auto">
+      </div>
+      <i class="jav-header__ichevron bi bi-chevron-down u-color-white" [class.u-rotate-180]="showLangList"></i>
+    </div>
+    <jav-dropdown-list *ngIf="showLangList"
+      [position]="flagsPosition" [items]="flagsList"
+      (itemSelected)="changeLanguage($event)" (clickOutside)="checkClickLang($event)"
+    ></jav-dropdown-list>
+  </div>
+
+</header>

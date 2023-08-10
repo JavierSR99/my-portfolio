@@ -1,0 +1,9 @@
+// POSITION UTILITY
+
+$position-map: ( relative, absolute );
+
+@each $pos in $position-map {
+  .u-pos-#{$pos} {
+    position: $pos;
+  }
+}

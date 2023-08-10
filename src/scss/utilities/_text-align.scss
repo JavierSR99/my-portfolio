@@ -1,0 +1,11 @@
+// TEXT-ALIGNMENT UTILITY
+
+$text-map: (
+  center
+);
+
+@each $value in $text-map {
+  .u-text-#{$value} {
+    text-align: $value;
+  }
+}

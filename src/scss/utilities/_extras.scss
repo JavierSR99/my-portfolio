@@ -1,0 +1,18 @@
+$gap-map: ("8" : 8px, "14": 14px);
+
+$gap-keys: map-keys($map: $gap-map);
+
+@each $gap in $gap-keys {
+  $value: map-get($map: $gap-map, $key: $gap);
+  .u-gap-#{$gap} {
+    gap: $value;
+  }
+}
+
+.u-cursor-pointer {
+  cursor: pointer;
+}
+
+.u-rotate-180 {
+  transform: rotate(180deg);
+}

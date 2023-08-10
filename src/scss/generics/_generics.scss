@@ -9,3 +9,7 @@
 p {
   font-size: v.$fs-12;
 }
+
+header, section, div, footer {
+  box-sizing: border-box;
+}

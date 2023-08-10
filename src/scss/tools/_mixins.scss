@@ -1,0 +1,12 @@
+// MIXINS
+
+@mixin setWidthAndHeight($w, $h) {
+  height: $h;
+  width: $w;
+}
+
+@mixin hover-bg($color) {
+  &:hover {
+    background-color: $color;
+  }
+}

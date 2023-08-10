@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "jav",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -32,7 +32,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/scss/main.scss"
+              "src/scss/main.scss",
+              "bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": []
           },

@@ -1,0 +1,38 @@
+@use "~/src/scss/settings/variables" as v;
+@use "~/src/scss/tools/mixins" as m;
+
+$c: v.$prefix + "header";
+
+#{$c} {
+
+  column-count: 3;
+  column-gap: 14px;
+
+  &__vsc, &__flag {
+    @include m.setWidthAndHeight(20px, 20px);
+  }
+
+  &__option {
+    cursor: default;
+  }
+
+  &__state {
+    line-height: 1.5;
+  }
+
+  &__main {
+    @include m.hover-bg(map-get(v.$color-map, "dark-hover-primary"));
+
+    border-radius: 10px;
+    width: fit-content;
+  }
+
+  &__flaglist {
+    left: 0;
+    bottom: 20px;
+  }
+
+  &__ichevron {
+    transition: transform .3s linear;
+  }
+}

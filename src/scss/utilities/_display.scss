@@ -1,0 +1,16 @@
+// DISPLAY UTILITIES
+$display-map: (
+    "flex" : flex,
+    "grid" : grid,
+    "none" : none,
+);
+
+$display-keys: map-keys($display-map);
+
+@each $ds in $display-keys {
+    $value: map-get($display-map, $ds);
+
+    .u-ds-#{$ds} {
+        display: $value;
+    }
+}

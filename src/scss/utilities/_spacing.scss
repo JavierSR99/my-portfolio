@@ -1,0 +1,74 @@
+$spacing-map: (
+  "0" : 0,
+  "1" : 4px,
+  "2" : 8px,
+  "3" : 16px,
+  "4" : 20px
+);
+
+$spacing-keys: map-keys($map: $spacing-map);
+
+@each $spa in $spacing-keys {
+  $value: map-get($map: $spacing-map, $key: $spa);
+
+  .u-m-#{$spa} {
+    margin: $value;
+  }
+
+  .u-ms-#{$spa} {
+    margin-left: $value;
+  }
+
+  .u-me-#{$spa} {
+    margin-right: $value;
+  }
+
+  .u-mt-#{$spa} {
+    margin-top: $value;
+  }
+
+  .u-mb-#{$spa} {
+    margin-bottom: $value;
+  }
+
+  .u-mx-#{$spa} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+
+  .u-my-#{$spa} {
+    margin-bottom: $value;
+    margin-top: $value;
+  }
+
+  .u-p-#{$spa} {
+    padding: $value;
+  }
+
+  .u-ps-#{$spa} {
+    padding-left: $value;
+  }
+
+  .u-pe-#{$spa} {
+    padding-right: $value;
+  }
+
+  .u-pt-#{$spa} {
+    padding-top: $value;
+  }
+
+  .u-pb-#{$spa} {
+    padding-bottom: $value;
+  }
+
+  .u-px-#{$spa} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  .u-py-#{$spa} {
+    padding-bottom: $value;
+    padding-top: $value;
+  }
+
+}

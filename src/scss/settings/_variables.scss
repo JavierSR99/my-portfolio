@@ -1,8 +1,38 @@
 // SCSS VARIABLES
 
-$prefix: ".app-";
+$prefix: ".jav-";
 
-// FONT VARIABLES
+// FONT
 $font-family: 'Roboto', sans-serif;
 
-$fs-12: 12px;
+$font-sizes-map : (
+  "12" : 12px,
+  "14" : 14px,
+  "16" : 16px
+);
+
+$fs-12: map-get($font-sizes-map, "12");
+$fs-14: map-get($font-sizes-map, "14");
+$fs-16: map-get($font-sizes-map, "16");
+
+// COLOR
+
+$color-map: (
+  "text-primary" : #878787,
+
+  "dark-primary": #272822,
+  "dark-secondary" : #1E1F1C,
+  "dark-tertiary": #34352f,
+
+  "dark-hover-primary": #323433,
+
+  "black" : #000,
+  "white" : #FFF
+);
+
+// BREAKPOINTS 
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
