@@ -1,0 +1,9 @@
+{
+  "HEADER" : {
+    "FILE" : "File",
+    "EDIT" : "Edit",
+    "SELECTION" : "Selection",
+    "TERMINAL" : "Terminal",
+    "HELP" : "Help"
+  }
+}

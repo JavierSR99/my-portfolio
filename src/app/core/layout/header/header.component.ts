@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { IDropdownListItem, IDropdownPosition } from 'src/app/shared/models/interfaces/dropdown-list.interface';
 
 @Component({
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   // #region READONLY VARIABLES
   public readonly iconVSC: string = '../../../../assets/images/vsc.png';
-  public readonly listItems: string[] = [ 'Archivo', 'Editar', 'Selección', 'Terminal', 'Ayuda' ];
+  public readonly listItems: string[] = [ 'HEADER.FILE', 'HEADER.EDIT', 'HEADER.SELECTION', 'HEADER.TERMINAL', 'HEADER.HELP' ];
   // #endregion
 
   // #region FLAGS DROPDOWN VARIABLES
@@ -36,17 +37,18 @@ export class HeaderComponent implements OnInit {
   public activeLang: string = 'es';
   
   // #region CONSTRUCTOR & LIFECYCLE HOOKS
-  constructor() { }
+  constructor(private _ts: TranslateService) { }
 
   ngOnInit(): void {
   }
   // #endregion
 
   // #region METHODS
-  public changeLanguage(value: string | number | boolean): void {
+  public switchLanguage(value: string | number | boolean): void {
     let newLang = value;
     if (typeof newLang === 'string') {
       this.activeLang = newLang;
+      this._ts.use(newLang);
     }
     this.showLangList = false;
   }

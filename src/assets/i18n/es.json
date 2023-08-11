@@ -1,0 +1,9 @@
+{
+  "HEADER" : {
+    "FILE" : "Archivo",
+    "EDIT" : "Editar",
+    "SELECTION" : "Selección",
+    "TERMINAL" : "Terminal",
+    "HELP" : "Ayuda"
+  }
+}

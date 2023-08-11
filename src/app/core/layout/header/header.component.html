@@ -7,7 +7,7 @@
       <i class="bi bi-list u-fs-20 u-color-white"></i>
     </li>
     <li *ngFor="let item of listItems" class="jav-header__option u-ms-3 u-color-text-primary">
-      {{ item }}
+      {{ item |translate }}
     </li>
   </ul>
   <p class="jav-header__state u-color-text-primary u-fs-14 u-w-per-100 p-flexcc">
@@ -23,7 +23,7 @@
     </div>
     <jav-dropdown-list *ngIf="showLangList"
       [position]="flagsPosition" [items]="flagsList"
-      (itemSelected)="changeLanguage($event)" (clickOutside)="checkClickLang($event)"
+      (itemSelected)="switchLanguage($event)" (clickOutside)="checkClickLang($event)"
     ></jav-dropdown-list>
   </div>
 
