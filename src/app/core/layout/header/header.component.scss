@@ -1,5 +1,6 @@
 @use "~/src/scss/settings/variables" as v;
 @use "~/src/scss/tools/mixins" as m;
+@use "~/src/scss/tools/media-queries" as mq;
 
 $c: v.$prefix + "header";
 
@@ -8,16 +9,60 @@ $c: v.$prefix + "header";
   column-count: 3;
   column-gap: 14px;
 
+  &__vsc {
+    @include mq.xs-device {
+      display: none;
+    }
+  }
+
   &__vsc, &__flag {
     @include m.setWidthAndHeight(20px, 20px);
   }
 
+  &__options {
+    @include mq.min-max-width(683px, 772px) {
+      & > :nth-last-child(-n+2) {
+        display: none;
+      }
+    }
+
+    @include mq.max-width(v.$bp-lg) {
+      & > :last-child {
+        display: none;
+      }
+    }
+  }
+
+  &__options, &__language {
+    @include mq.max-width(682px) {
+      width: fit-content;
+    }
+  }
+
   &__option {
     cursor: default;
+
+    @include mq.max-width(682px) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include mq.xs-device {
+      display: initial;
+    }
   }
 
   &__state {
     line-height: 1.5;
+  }
+
+  &__state, &__option {
+    @include mq.max-width(v.$bp-lg) {
+      font-size: 12px;
+    }
   }
 
   &__main {

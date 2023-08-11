@@ -32,6 +32,14 @@
   @media (min-width: v.$bp-xxl) { @content; }
 }
 
+@mixin max-width ($bp) {
+  @media (max-width: $bp) { @content; }
+}
+
+@mixin min-max-width ($min, $max) {
+  @media (min-width: $min) and (max-width: $max) { @content; }
+}
+
 /* 
   HOW TO USE IT:
 

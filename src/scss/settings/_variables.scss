@@ -8,7 +8,8 @@ $font-family: 'Roboto', sans-serif;
 $font-sizes-map : (
   "12" : 12px,
   "14" : 14px,
-  "16" : 16px
+  "16" : 16px,
+  "20" : 20px
 );
 
 $fs-12: map-get($font-sizes-map, "12");
