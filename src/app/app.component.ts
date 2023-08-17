@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from './core/services/language.service';
 
 @Component({
   selector: 'jav-root',
@@ -8,15 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
 
-  constructor( private _ts: TranslateService) {
-    _ts.addLangs(['es', 'en']);
-    const lang = _ts.getBrowserLang();
-
-    if (lang !== 'es' && lang !== 'en') {
-      _ts.setDefaultLang('es');
-    } else {
-      _ts.setDefaultLang(lang);
-    }
+  constructor( private _ls: LanguageService) {
+    _ls.setInitialLanguage();
   }
 
 }

@@ -5,5 +5,10 @@
     "SELECTION" : "Selección",
     "TERMINAL" : "Terminal",
     "HELP" : "Ayuda"
+  },
+  "PAGES" : {
+    "HOME" : "Inicio",
+    "CONTACT" : "Contacto",
+    "CV" : "Currículum"
   }
 }
