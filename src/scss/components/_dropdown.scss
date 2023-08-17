@@ -9,13 +9,7 @@
   max-width: 200px;
 
   &__item {
-
-    border-radius: var(--radius);
-
-    &:hover {
-      background-color: map-get($map: v.$color-map, $key: "dark-hover-primary");
-      cursor: pointer;
-    }
+    @include m.hover-dark-primary(var(--radius));
   }
 
   &__img {

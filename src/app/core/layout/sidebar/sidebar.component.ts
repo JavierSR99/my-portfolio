@@ -1,0 +1,20 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'jav-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss']
+})
+export class SidebarComponent implements OnInit {
+
+  // #region VARIABLES READONLY
+  public readonly icons: string [] = [ 'files', 'search', 'git', 'bug' ];
+
+  // #endregion
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

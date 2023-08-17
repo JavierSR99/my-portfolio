@@ -1,0 +1,24 @@
+<div class="jav-sidebar u-w-per-100 u-h-per-100 u-ds-flex">
+  <div class="jav-sidebar__icons u-w-content u-h-per-100 u-bg-dark-primary">
+    <ul>
+      <li *ngFor="let icon of icons; first as f" class="jav-sidebar__icon u-p-2" [class.jav-sidebar__icon--active]="f">
+        <i [ngClass]="'bi-' + icon" class="bi u-color-white u-fs-24"></i>
+      </li>
+    </ul>
+  </div>
+  <div class="jav-sidebar__menu u-w-per-100 u-bg-dark-secondary">
+    <div class="p-flexcb u-p-2">
+      <p class="u-fs-14"> {{ 'SIDEBAR.EXPLORER' | translate }} </p>
+      <i class="bi bi-three-dots"></i>
+    </div>
+    <div class="p-flexcs u-bg-dark-primary u-p-1">
+      <i class="bi bi-chevron-down u-me-1"></i>
+      <p class="u-fw-500 u-fs-12">
+        JAVIER-SANZ
+      </p>
+    </div>
+    <div class="u-px-2">
+      <jav-menu></jav-menu>
+    </div>
+  </div>
+</div>

@@ -66,9 +66,7 @@ $c: v.$prefix + "header";
   }
 
   &__main {
-    @include m.hover-bg(map-get(v.$color-map, "dark-hover-primary"));
-
-    border-radius: 10px;
+    @include m.hover-dark-primary(10px);
     width: fit-content;
   }
 

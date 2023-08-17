@@ -1,0 +1,9 @@
+.app-container {
+  &__sidebar {
+    width: 20%;
+  }
+  
+  &__content {
+    width: 80%;
+  }
+}

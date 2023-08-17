@@ -1,4 +1,4 @@
-$gap-map: ("8" : 8px, "14": 14px);
+$gap-map: ( "4" : 4px,"8" : 8px, "14": 14px);
 
 $gap-keys: map-keys($map: $gap-map);
 
@@ -15,4 +15,8 @@ $gap-keys: map-keys($map: $gap-map);
 
 .u-rotate-180 {
   transform: rotate(180deg);
+}
+
+.u-dir-col {
+  flex-direction: column;
 }

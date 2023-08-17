@@ -6,9 +6,12 @@
     "TERMINAL" : "Terminal",
     "HELP" : "Help"
   },
+  "SIDEBAR" : {
+    "EXPLORER" : "Explorer"
+  },
   "PAGES" : {
-    "HOME" : "Home",
-    "CONTACT" : "Contact",
+    "HOME" : "HOME",
+    "CONTACT" : "CONTACT",
     "CV" : "CV"
   }
 }

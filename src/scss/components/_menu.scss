@@ -1,0 +1,9 @@
+@use "~/src/scss/settings/variables" as v;
+@use "~/src/scss/tools/mixins" as m;
+
+.c-menu {
+  &__link {
+    @include m.hover-dark-primary;
+    cursor: pointer;
+  }
+}

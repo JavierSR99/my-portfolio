@@ -14,7 +14,29 @@ export class LanguageService {
   public setInitialLanguage(): void {
     this._ts.addLangs(['es', 'en']);
     const lang = this._ts.getBrowserLang();
+    const storageLang = localStorage.getItem('lang');
 
+    if (storageLang) {
+      this.validateAndSetLang(storageLang);
+    } else {
+      this.validateAndSetLang(lang);
+    }
+  }
+
+  public setActiveLang(value: string): void {
+
+    if (['es', 'en'].includes(value)) {
+      this.activeLanguage$.next(value);
+
+      if (localStorage.getItem('lang')) {
+        localStorage.removeItem('lang');
+      }
+      localStorage.setItem('lang', value);
+
+    } else { this.activeLanguage$.next('es'); }
+  }
+
+  private validateAndSetLang(lang: string | undefined): void {
     if (lang !== 'es' && lang !== 'en') {
       this._ts.setDefaultLang('es');
       this.setActiveLang('es');
@@ -22,9 +44,5 @@ export class LanguageService {
       this._ts.setDefaultLang(lang);
       this.setActiveLang(lang);
     }
-  }
-
-  public setActiveLang(value: string): void {
-    this.activeLanguage$.next(value);
   }
 }

@@ -1,0 +1,9 @@
+// Z-INDEX (3 LEVELS MAX)
+
+$zindex-map: (1, 2, 3);
+
+@each $z in $zindex-map {
+  .u-index-#{$z} {
+    z-index: $z;
+  }
+}

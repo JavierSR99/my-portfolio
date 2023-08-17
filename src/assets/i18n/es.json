@@ -6,9 +6,12 @@
     "TERMINAL" : "Terminal",
     "HELP" : "Ayuda"
   },
+  "SIDEBAR" : {
+    "EXPLORER" : "Explorador"
+  },
   "PAGES" : {
-    "HOME" : "Inicio",
-    "CONTACT" : "Contacto",
-    "CV" : "Currículum"
+    "HOME" : "INICIO",
+    "CONTACT" : "CONTACTO",
+    "CV" : "CURRÍCULUM"
   }
 }

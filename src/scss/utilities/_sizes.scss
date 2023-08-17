@@ -12,6 +12,9 @@ $measures-keys: map-keys($map: $measures-map);
     .u-h-#{$mea}-#{$size} {
       height: $size + #{$value-mea};
     }
-
   }
+}
+
+.u-w-content {
+  width: fit-content;
 }
