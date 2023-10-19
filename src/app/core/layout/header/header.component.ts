@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IDropdownListItem, IDropdownPosition } from 'src/app/shared/models/interfaces/dropdown-list.interface';
@@ -21,6 +21,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
     // #endregion
 
+    // #region INPUTS, OUTPUTS
+    @Output() sidebarStatus = new EventEmitter<boolean>();
+    switchSidebarStatus(value: boolean): void {
+      this.sidebarStatus.emit(value);
+      this.activeSidebar = !this.activeSidebar;
+    }
+    // #endregion
+
   // #region READONLY VARIABLES
   public readonly iconVSC: string = '../../../../assets/images/vsc.png';
   public readonly listItems: string[] = [ 'HEADER.FILE', 'HEADER.EDIT', 'HEADER.SELECTION', 'HEADER.TERMINAL', 'HEADER.HELP' ];
@@ -39,7 +47,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // #region VARIABLES
   public activeRoute: string = 'Home';
   public activeLang!: string;
-  
+  public activeSidebar: boolean = true;
 
   private listObservers$: Array<Subscription> = [];
   // #endregion

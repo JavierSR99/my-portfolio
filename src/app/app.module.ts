@@ -9,6 +9,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './core/layout/sidebar/sidebar.component';
 import { MenuComponent } from './core/layout/sidebar/components/menu/menu.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { MenuComponent } from './core/layout/sidebar/components/menu/menu.compon
     HeaderComponent,
     DropdownListComponent,
     SidebarComponent,
-    MenuComponent
+    MenuComponent,
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ export interface IDropdownListItem {
   label: string,
   icon?: string,
   image?: string,
-  alt?: string
+  alt?: string,
   value: string | number | boolean
 }
 

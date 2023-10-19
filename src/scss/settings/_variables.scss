@@ -10,7 +10,8 @@ $font-sizes-map : (
   "14" : 14px,
   "16" : 16px,
   "20" : 20px,
-  "24" : 24px
+  "24" : 24px,
+  "40" : 40px
 );
 
 $fs-12: map-get($font-sizes-map, "12");

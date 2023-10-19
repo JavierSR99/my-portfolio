@@ -8,6 +8,13 @@ $c: v.$prefix + "sidebar";
 
   color: map-get($map: v.$color-map, $key: "white");
 
+  &__icons {
+    @include mq.xs-device {
+      display: none;
+    }
+  }
+
+
   &__icon {
     &--active {
       border-left: 2px solid map-get($map: v.$color-map, $key: "white");

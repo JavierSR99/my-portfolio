@@ -1,0 +1,11 @@
+@use "../../../scss/settings/variables" as v;
+
+$c: #{v.$prefix} + "contact";
+
+#{$c} {
+  &__iframe {
+    background-color: white;
+    height: 70%;
+    width: 80%;
+  }
+}

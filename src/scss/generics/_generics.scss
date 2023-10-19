@@ -13,3 +13,7 @@ p {
 header, section, div, footer {
   box-sizing: border-box;
 }
+
+p, h2, h3 {
+  color: map-get($map: v.$color-map, $key: "white");
+}

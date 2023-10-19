@@ -8,8 +8,24 @@ import { LanguageService } from './core/services/language.service';
 })
 export class AppComponent {
 
-  constructor( private _ls: LanguageService) {
+  // #region VARIABLES
+  public sidebarStatus: boolean = false;
+  // #endregion
+
+  // #region CONSTRUCTOR & LIFECYCLE HOOKS
+  constructor(private _ls: LanguageService) {
     _ls.setInitialLanguage();
   }
+  // #endregion
+
+  // #region METHODS
+  /**
+   * Show/hide sidebar in responsive structure (only small devices)
+   * @param value 
+   */
+  public switchSidebarStatus(value: boolean): void {
+    this.sidebarStatus = value;
+  }
+  // #endregion
 
 }
