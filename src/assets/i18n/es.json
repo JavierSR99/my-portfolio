@@ -18,5 +18,25 @@
     "CV" : {
       "TITLE" : "Currículum Vitae"
     }
+  },
+  "CV" : {
+    "EXPERIENCE" : "Experiencia Laboral",
+    "JOBS" : {
+      "YUB" : {
+        "TIME" : "Octubre 2020 - Mayo 2021",
+        "DESCRIPTION" : "Realicé las prácticas del CFGS de 'Desarrollo de Aplicaciones Web' aquí, trabajando como Full Stack con tecnologías como PHP, JQuery o MySQL. Después fui contratado, pero las responsabilidades ya estaban desde el primer día de prácticas."
+      },
+      "ARATECH" : {
+        "TIME" : "Mayo 2021 - Febrero 2022",
+        "DESCRIPTION" : "En esta empresa empecé a enfocarme en el front-end al 100%, realizando diversos proyectos con Angular como framework principal. También utilicé otras tecnologías, así como Prestashop, Wordpress y Vue."
+      },
+      "ICP" : {
+        "TIME" : "Febrero 2022 - Actualidad",
+        "DESCRIPTION" : "Surgió la oportunidad de empezar un departamento front-end desde cero, entre otro compañero y yo. Juntos, creamos una arquitectura front propia para la empresa, que iríamos mejorando con el tiempo, según iba creciendo el equipo."
+      }
+    }
+  },
+  "GENERICS" : {
+    "SEE_MORE" : "Ver más"
   }
 }

@@ -18,6 +18,10 @@
   }
   
   &__content {
-    width: 80%;
+    width: 100%;
+
+    @include mq.xs-device {
+      padding: 0 14px;
+    }
   }
 }

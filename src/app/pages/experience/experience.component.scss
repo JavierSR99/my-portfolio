@@ -1,0 +1,14 @@
+@use "~/src/scss/settings/variables" as v;
+@use "~/src/scss/tools/media-queries" as mq;
+
+$c: #{v.$prefix} + "cv";
+
+#{$c} {
+  &__card {
+    width: 50%;
+
+    @include mq.max-width(767px) {
+      width: 100%;
+    }
+  }
+}

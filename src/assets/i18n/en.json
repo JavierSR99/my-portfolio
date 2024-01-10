@@ -18,5 +18,25 @@
     "CV" : {
       "TITLE" : "Curriculum Vitae"
     }
+  },
+  "CV" : {
+    "EXPERIENCE" : "Working Experience",
+    "JOBS" : {
+      "YUB" : {
+        "TIME" : "October 2020 - May 2021",
+        "DESCRIPTION" : "Realicé las prácticas del CFGS de 'Desarrollo de Aplicaciones Web' aquí, trabajando como Full Stack con tecnologías como PHP, JQuery, MySQL, Bootstrap, etc."
+      },
+      "ARATECH" : {
+        "TIME" : "May 2021 - February 2022",
+        "DESCRIPTION" : "PRUEBA"
+      },
+      "ICP" : {
+        "TIME" : "February 2022 - Now",
+        "DESCRIPTION" : "PRUEBA"
+      }
+    }
+  },
+  "GENERICS" : {
+    "SEE_MORE" : "See more"
   }
 }

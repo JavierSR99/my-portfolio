@@ -6,16 +6,19 @@ export const COMPANIES: ICompaniesCard[] = [
   {
     title: 'Yub Store',
     logo : `${IMG_ROUTE}yub.png`,
-    description : 'Probando descripción'
+    description : 'CV.JOBS.YUB.DESCRIPTION',
+    timeline : 'CV.JOBS.YUB.TIME'
   },
   {
-    title: 'ARATECH lifestyle technology',
+    title: 'ARATECH',
     logo : `${IMG_ROUTE}aratech.png`,
-    description : 'Probando descripción'
+    description : 'CV.JOBS.ARATECH.DESCRIPTION',
+    timeline : 'CV.JOBS.ARATECH.TIME'
   },
   {
     title: 'ICP',
     logo : `${IMG_ROUTE}icp.png`,
-    description : 'Probando descripción'
+    description : 'CV.JOBS.ICP.DESCRIPTION',
+    timeline : 'CV.JOBS.ICP.TIME'
   }
 ];

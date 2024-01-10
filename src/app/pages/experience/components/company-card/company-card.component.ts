@@ -11,13 +11,13 @@ export class CompanyCardComponent implements OnInit {
   @Input() data: ICompaniesCard = {
     title: '',
     logo: '',
-    description: ''
+    description: '',
+    timeline : ''
   };
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.data)
   }
 
 }

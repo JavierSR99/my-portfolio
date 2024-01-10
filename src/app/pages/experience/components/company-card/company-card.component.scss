@@ -1,17 +1,43 @@
 @use "~/src/scss/settings/variables" as v;
+@use "~/src/scss/tools/media-queries" as mq;
 
 $c: #{v.$prefix} + "company-card";
 
 #{$c} {
-  // -moz-box-shadow: 3px 2px 26px -2px rgba(163,163,163,1);
-  // -webkit-box-shadow: 3px 2px 26px -2px rgba(163,163,163,1);
+
+  // #region BASE STYLES
   background-color: map-get($map: v.$color-map, $key: "white");
   border-radius: 10px;
-  // box-shadow: 3px 2px 26px -2px rgba(163,163,163,1);
   width: 550px;
   min-height: 100px;
   padding: v.$fs-16;
 
+  @include mq.min-max-width(1300px, 1450px) {
+    width: 500px;
+  }
+
+  @include mq.min-max-width(1200px, 1299px) {
+    width: 450px;
+  }
+
+  @include mq.lg-device {
+    width: 350px;
+  }
+
+  @include mq.md-device {
+    width: 300px;
+  }
+
+  @include mq.sm-device {
+    width: 400px;
+  }
+
+  @include mq.xs-device {
+    width: 100%;
+  }
+  // #endregion BASE STYLES
+
+  // #region ELEMENTS
   &__logo {
     height: auto;
     width: 100px;
@@ -20,4 +46,18 @@ $c: #{v.$prefix} + "company-card";
       border-radius: 10px;
     }
   }
+
+  &__info {
+    width: calc(100% - 100px);
+  }
+
+  &__description {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+  }
+  // #endregion ELEMENTS
 }
