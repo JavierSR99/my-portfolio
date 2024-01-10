@@ -1,0 +1,23 @@
+@use "~/src/scss/settings/variables" as v;
+
+$c: #{v.$prefix} + "company-card";
+
+#{$c} {
+  // -moz-box-shadow: 3px 2px 26px -2px rgba(163,163,163,1);
+  // -webkit-box-shadow: 3px 2px 26px -2px rgba(163,163,163,1);
+  background-color: map-get($map: v.$color-map, $key: "white");
+  border-radius: 10px;
+  // box-shadow: 3px 2px 26px -2px rgba(163,163,163,1);
+  width: 550px;
+  min-height: 100px;
+  padding: v.$fs-16;
+
+  &__logo {
+    height: auto;
+    width: 100px;
+
+    img {
+      border-radius: 10px;
+    }
+  }
+}

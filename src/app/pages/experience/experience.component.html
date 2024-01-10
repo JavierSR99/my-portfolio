@@ -1,0 +1,11 @@
+<div class="jav-cv u-w-per-100">
+  <jav-page-title [title]="'TITLES.CV.TITLE' | translate"></jav-page-title>
+  <section class="jav-sv__companies p-flexss u-fwrap-wrap u-w-per-100">
+    <div class="u-w-per-100 u-text-center">
+      <h3 class="u-fs-24"> Experiencia Laboral </h3>
+    </div>
+    <div *ngFor="let comp of companies" class="u-w-per-50 u-mb-4 p-flexcc">
+      <jav-company-card [data]="comp" ></jav-company-card>
+    </div>
+  </section>
+</div>

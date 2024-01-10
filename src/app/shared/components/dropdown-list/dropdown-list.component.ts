@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, HostListener, ElementRef } from '@angular/core';
-import { IDropdownPosition, IDropdownListItem } from '../../models/interfaces/dropdown-list.interface';
+import { IDropdownPosition, IDropdownListItem } from '../../../core/models/interfaces/dropdown-list.interface';
 
 @Component({
   selector: 'jav-dropdown-list',

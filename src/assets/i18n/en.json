@@ -12,6 +12,11 @@
   "PAGES" : {
     "HOME" : "HOME",
     "CONTACT" : "CONTACT",
-    "CV" : "CV"
+    "CV" : "RESUME"
+  },
+  "TITLES" : {
+    "CV" : {
+      "TITLE" : "Curriculum Vitae"
+    }
   }
 }

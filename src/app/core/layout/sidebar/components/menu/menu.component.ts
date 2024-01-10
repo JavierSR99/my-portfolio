@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuIcon, MenuItemType } from 'src/app/core/models/enum/menu-item.enum';
 import { IMenuItem } from 'src/app/core/models/interfaces/menu-item.interface';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { MENU_ITEMS } from 'src/app/core/models/constants/menu-items.constants';
 
 @Component({
   selector: 'jav-menu',
@@ -10,20 +10,26 @@ import { Router } from '@angular/router';
 export class MenuComponent implements OnInit {
 
   // #region VARIABLES
-  public menuItems: IMenuItem[] = [
-    { label: 'Pages', icon: MenuIcon.folder, type: MenuItemType.parent, parentOpen: true },
-    { label: 'HOME', icon: MenuIcon.html, type: MenuItemType.child, link: '/' },
-    { label: 'CONTACT', icon: MenuIcon.scss, type: MenuItemType.child, link: '/contact' },
-    { label: 'Core', icon: MenuIcon.foldercheck, type: MenuItemType.parent, parentOpen: false },
-    { label: 'Shared', icon: MenuIcon.foldercheck, type: MenuItemType.parent, parentOpen: false }
-  ];
+
+  public activeRoute: string = "";
+
+  public readonly menuItems: IMenuItem[] = MENU_ITEMS;
   // #endregion
 
   constructor(
     private _router: Router
-  ) { }
+  ) {
+    _router.events.forEach((event) => {
+      if(event instanceof NavigationEnd) {
+        this.changeActiveRoute();
+      }
+    });
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  private changeActiveRoute(): void {
+    this.activeRoute = this._router.url;
   }
 
   public goToRoute(item: IMenuItem): void {

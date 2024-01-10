@@ -11,6 +11,9 @@ import { SidebarComponent } from './core/layout/sidebar/sidebar.component';
 import { MenuComponent } from './core/layout/sidebar/components/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ExperienceComponent } from './pages/experience/experience.component';
+import { PageTitleComponent } from './shared/components/page-title/page-title.component';
+import { CompanyCardComponent } from './pages/experience/components/company-card/company-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ContactComponent } from './pages/contact/contact.component';
     SidebarComponent,
     MenuComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    ExperienceComponent,
+    PageTitleComponent,
+    CompanyCardComponent
   ],
   imports: [
     BrowserModule,

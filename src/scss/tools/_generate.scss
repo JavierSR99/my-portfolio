@@ -1,0 +1,115 @@
+// MIXINS PARA GENERAR UTILIDADES
+// NO SE INCLUYEN EN LOS @USE DE LA ITCSS
+
+// PARA SUFIJOS, EN CASO DE QUERER APLICARLOS, PASAR UN 1 COMO PARÁMETRO
+
+@use "../02.tools/functions" as f;
+@use "../02.tools/mixins" as m;
+
+/*
+  UTILITDADES SIMPLES, EN LA QUE SIMPLEMENTE SE GENERA UNA PROPIEDAD
+  EJ: .u-color-white, .u-fs-12, .u-ds-none
+*/
+@mixin generate-simple-utility($map, $prop, $label, $sufixes: null) {
+  @if (f.is-type($map, "map")) {
+    $keys: map-keys($map: $map);
+
+    @each $key in $keys {
+      $value: map-get($map, $key);
+
+      .u-#{$label}-#{$key} {
+        #{$prop}: $value !important;
+
+        @if ($sufixes != null && $sufixes == 1) {
+          @include m.sufixes(#{$prop}, $value);
+        }
+
+      }
+    }
+  }
+}
+
+/*
+  UTILIDADES CON PROPIEDADES QUE TIENEN DOBLE VALOR
+  EJ: place-content: center center; margin: auto 12px;
+*/
+@mixin generate-double-value-utility($first-map, $second-map, $prop, $label, $sufixes: null) {
+  
+  // VALIDAMOS QUE LOS MAPAS SEAN CORRECTOS
+  @if (f.is-type($first-map, "map") && f.is-type($second-map, "map")) {
+
+    $first-keys: map-keys($map: $first-map);
+    $second-keys: map-keys($map: $second-map);
+
+    // RECORREMOS EL PRIMER MAPA
+    @each $first in $first-keys {
+      $first-value: map-get($first-map, $first);
+
+      // RECORREMOS EL SEGUNDO MAPA
+      @each $second in $second-keys {
+        $second-value: map-get($second-map, $second);
+
+        .u-#{$label}-#{$first}-#{$second} {
+          $value: map-get($first-map, $first) + ' ' + map-get($second-map, $second);
+          #{$prop}: $value !important;
+
+          @if ($sufixes != null && $sufixes == 1) {
+            @include m.sufixes(#{$prop}, $value);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+  UTILIDADES QUE CONTIENEN DOS PROPIEDADES POR CLASE
+  EJ: .U-PX-2 --> abarca padding-left y padding-right, que son propiedades independientes
+                  pero que, en este caso, deben ir juntas
+
+                  Estas utilidades no son compatibles con los sufijos
+*/
+@mixin generate-double-property-utility ($map, $first-prop, $second-prop, $label) {
+  @if (f.is-type($map, "map")) {
+    $keys: map-keys($map: $map);
+
+    @each $key in $keys {
+      $value: map-get($map, $key);
+
+      .u-#{$label}-#{$key} {
+        #{$first-prop}: $value !important;
+        #{$second-prop}: $value !important;
+      }
+    }
+  }
+}
+
+/*
+  UTILIDADES QUE CONTENGAN VALOR DE MEDIDA DINÁMICO A LA HORA DE GENERARLAS
+  EJ: .u-height-per-100 --> height: 100%; .u-height-px-100 --> height: 100px;
+      como podemos ver, el valor de la medida es dinámico, pero la propiedad
+      es la misma para todos los casos
+*/
+@mixin generate-dynamic-property-utility ($map, $measures, $prop, $label, $sufixes: null) {
+  @if (f.is-type($map, "map") && f.is-type($measures, "map")) {
+    $keys: map-keys($map: $map);
+    $measure-keys: map-keys($map: $measures);
+
+    @each $mea in $measure-keys {
+      $mea-value: map-get($measures, $mea);
+
+      @each $key in $keys {
+        $value: map-get($map, $key);
+
+        .u-#{$label}-#{$mea}-#{$key} {
+          #{$prop}: #{$value + $mea-value} !important;
+
+          @if ($sufixes != null && $sufixes == 1) {
+            @include m.sufixes(#{$prop}, $value);
+          }
+        }
+      }
+    
+    }
+  }
+}

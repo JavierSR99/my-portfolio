@@ -1,7 +1,8 @@
 // TEXT-ALIGNMENT UTILITY
 
 $text-map: (
-  center
+  center,
+  right
 );
 
 @each $value in $text-map {

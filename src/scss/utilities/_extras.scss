@@ -20,3 +20,7 @@ $gap-keys: map-keys($map: $gap-map);
 .u-dir-col {
   flex-direction: column;
 }
+
+.u-fwrap-wrap {
+  flex-wrap: wrap;
+}

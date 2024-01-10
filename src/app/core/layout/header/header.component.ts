@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { TranslateService } from '@ngx-translate/core';
-import { IDropdownListItem, IDropdownPosition } from 'src/app/shared/models/interfaces/dropdown-list.interface';
+import { IDropdownListItem, IDropdownPosition } from 'src/app/core/models/interfaces/dropdown-list.interface';
 import { Subscription } from 'rxjs';
 import { RouteService } from '../../services/route.service';
 

@@ -5,5 +5,9 @@
   &__link {
     @include m.hover-dark-primary;
     cursor: pointer;
+
+    &--active {
+      background-color: map-get(v.$color-map, "dark-hover-primary");
+    }
   }
 }

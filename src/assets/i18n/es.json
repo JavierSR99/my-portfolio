@@ -13,5 +13,10 @@
     "HOME" : "INICIO",
     "CONTACT" : "CONTACTO",
     "CV" : "CURRÍCULUM"
+  },
+  "TITLES" : {
+    "CV" : {
+      "TITLE" : "Currículum Vitae"
+    }
   }
 }
