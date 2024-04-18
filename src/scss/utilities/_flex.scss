@@ -1,0 +1,14 @@
+@use "../tools/generate" as g;
+
+// JUSTIFY-CONTENT AND ALIGN-ITEMS
+$alignment: ( "center" : center, "start" : flex-start, "end" : flex-end, "between" : space-between, "around" : space-around );
+@include g.generate-simple-utility($alignment, "justify-content", "justify");
+@include g.generate-simple-utility($alignment, "align-items", "align");
+
+// FLEX-DIRECTION
+$direction: ( "col" : column, "row" : row );
+@include g.generate-simple-utility($direction, "flex-direction", "fdir");
+
+// GAP
+$gap: ( "2" : 2px, "8" : 8px, "16" : 16px, "24" : 24px, "64" : 64px );
+@include g.generate-simple-utility($gap, "gap", "gap");

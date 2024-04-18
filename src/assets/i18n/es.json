@@ -36,6 +36,9 @@
       }
     }
   },
+  "CONTACT" : {
+    "DESCRIPTION" : "Puedes contactarme y saber más sobre mí en estos sitios web:"
+  },
   "GENERICS" : {
     "SEE_MORE" : "Ver más"
   }

@@ -3,9 +3,23 @@
 $c: #{v.$prefix} + "contact";
 
 #{$c} {
-  &__iframe {
-    background-color: white;
-    height: 70%;
-    width: 80%;
+
+  &__sites {
+  }
+
+  &__logo {
+    border-radius: 70px;
+    height: 100px;
+    width: 100px;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform .3s ease-in-out;
+    }
+
+    .bi {
+      color: map-get($map: v.$color-map, $key: "white");
+      font-size: 50px;
+    }
   }
 }

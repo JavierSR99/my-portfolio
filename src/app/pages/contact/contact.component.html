@@ -1,6 +1,12 @@
 <div class="jav-contact u-w-per-100 u-h-per-100 p-flexcc u-dir-col">
-  <h2 class="u-fs-40 u-mb-0"> CONTACTO </h2>
-  <h3 class="u-fs-24">
-    Puedes contactarme y saber más sobre mí en estos sitios web:
-  </h3>
+  <jav-page-title [title]="'PAGES.CONTACT' | translate" [description]="'CONTACT.DESCRIPTION' | translate"></jav-page-title>
+  
+  <div class="jav-contact__sites u-ds-flex u-justify-center u-gap-64">
+    <a *ngFor="let item of sites"
+      class="jav-contact__logo p-flexcc" [ngStyle]="{ 'background-color' : item.bgColor}"
+      [href]="item.link" target="_blank"
+    >
+      <i class="bi" [ngClass]="item.logo"></i>
+    </a>
+  </div>
 </div>

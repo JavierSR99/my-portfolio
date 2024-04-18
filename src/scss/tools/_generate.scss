@@ -1,16 +1,14 @@
 // MIXINS PARA GENERAR UTILIDADES
 // NO SE INCLUYEN EN LOS @USE DE LA ITCSS
 
-// PARA SUFIJOS, EN CASO DE QUERER APLICARLOS, PASAR UN 1 COMO PARÁMETRO
-
-@use "../02.tools/functions" as f;
-@use "../02.tools/mixins" as m;
+@use "../tools/functions" as f;
+@use "../tools/mixins" as m;
 
 /*
   UTILITDADES SIMPLES, EN LA QUE SIMPLEMENTE SE GENERA UNA PROPIEDAD
   EJ: .u-color-white, .u-fs-12, .u-ds-none
 */
-@mixin generate-simple-utility($map, $prop, $label, $sufixes: null) {
+@mixin generate-simple-utility($map, $prop, $label) {
   @if (f.is-type($map, "map")) {
     $keys: map-keys($map: $map);
 
@@ -19,11 +17,6 @@
 
       .u-#{$label}-#{$key} {
         #{$prop}: $value !important;
-
-        @if ($sufixes != null && $sufixes == 1) {
-          @include m.sufixes(#{$prop}, $value);
-        }
-
       }
     }
   }
@@ -33,7 +26,7 @@
   UTILIDADES CON PROPIEDADES QUE TIENEN DOBLE VALOR
   EJ: place-content: center center; margin: auto 12px;
 */
-@mixin generate-double-value-utility($first-map, $second-map, $prop, $label, $sufixes: null) {
+@mixin generate-double-value-utility($first-map, $second-map, $prop, $label) {
   
   // VALIDAMOS QUE LOS MAPAS SEAN CORRECTOS
   @if (f.is-type($first-map, "map") && f.is-type($second-map, "map")) {
@@ -52,10 +45,6 @@
         .u-#{$label}-#{$first}-#{$second} {
           $value: map-get($first-map, $first) + ' ' + map-get($second-map, $second);
           #{$prop}: $value !important;
-
-          @if ($sufixes != null && $sufixes == 1) {
-            @include m.sufixes(#{$prop}, $value);
-          }
         }
       }
     }
@@ -90,7 +79,7 @@
       como podemos ver, el valor de la medida es dinámico, pero la propiedad
       es la misma para todos los casos
 */
-@mixin generate-dynamic-property-utility ($map, $measures, $prop, $label, $sufixes: null) {
+@mixin generate-dynamic-property-utility ($map, $measures, $prop, $label) {
   @if (f.is-type($map, "map") && f.is-type($measures, "map")) {
     $keys: map-keys($map: $map);
     $measure-keys: map-keys($map: $measures);
@@ -103,10 +92,6 @@
 
         .u-#{$label}-#{$mea}-#{$key} {
           #{$prop}: #{$value + $mea-value} !important;
-
-          @if ($sufixes != null && $sufixes == 1) {
-            @include m.sufixes(#{$prop}, $value);
-          }
         }
       }
     

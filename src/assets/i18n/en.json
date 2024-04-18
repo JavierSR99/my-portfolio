@@ -36,6 +36,9 @@
       }
     }
   },
+  "CONTACT" : {
+    "DESCRIPTION" : "You know a little more about me here:"
+  },
   "GENERICS" : {
     "SEE_MORE" : "See more"
   }
