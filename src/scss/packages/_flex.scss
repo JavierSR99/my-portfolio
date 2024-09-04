@@ -28,6 +28,12 @@ $align-keys: map-keys($align);
                   display: flex;
                   align-items: $ver;
                   justify-content: $hor;
+
+                  &-col {
+                    flex-direction: column;
+
+                    @extend .p-flex#{$a}#{$j};
+                  }
               }
           }
       }

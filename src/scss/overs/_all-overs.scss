@@ -1,0 +1,5 @@
+@use "../settings/variables" as v;
+
+.ti-cursor {
+  color: map-get(v.$color-map, "white") !important;
+}

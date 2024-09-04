@@ -11,12 +11,16 @@ $font-sizes-map : (
   "16" : 16px,
   "20" : 20px,
   "24" : 24px,
-  "40" : 40px
+  "32" : 32px,
+  "40" : 40px,
+  "64" : 64px
 );
 
 $fs-12: map-get($font-sizes-map, "12");
 $fs-14: map-get($font-sizes-map, "14");
 $fs-16: map-get($font-sizes-map, "16");
+$fs-32: map-get($font-sizes-map, "32");
+$fs-64: map-get($font-sizes-map, "64");
 
 // COLOR
 
@@ -30,7 +34,9 @@ $color-map: (
   "dark-hover-primary": #323433,
 
   "black" : #000,
-  "white" : #FFF
+  "white" : #FFF,
+
+  "comp1" : #03698f
 );
 
 // BREAKPOINTS 

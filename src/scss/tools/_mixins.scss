@@ -19,3 +19,10 @@
   border-radius: $radius;
   cursor: pointer;
 }
+
+@mixin d-flex($align: center, $justify: center, $direction: row) {
+  align-items: $align;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
