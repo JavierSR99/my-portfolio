@@ -3,7 +3,7 @@
     <li class="jav-header__vsc">
       <img [src]="iconVSC" alt="vsc-icon" width="100%" height="auto">
     </li>
-    <li class="jav-header__menu" (click)="switchSidebarStatus(activeSidebar)">
+    <li class="jav-header__menu" (click)="switchSidebarStatus(!sidebarActive)">
       <i class="bi bi-list u-fs-20 u-color-white"></i>
     </li>
     <li *ngFor="let item of listItems" class="jav-header__option u-ms-3 u-color-text-primary">

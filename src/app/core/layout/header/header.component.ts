@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IDropdownListItem, IDropdownPosition } from 'src/app/core/models/interfaces/dropdown-list.interface';
 import { Subscription } from 'rxjs';
 import { RouteService } from '../../services/route.service';
+import { SidebarStatusService } from 'src/app/shared/services/sidebar-status.service';
 
 @Component({
   selector: 'jav-header',
@@ -21,13 +22,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
     // #endregion
 
-    // #region INPUTS, OUTPUTS
-    @Output() sidebarStatus = new EventEmitter<boolean>();
-    switchSidebarStatus(value: boolean): void {
-      this.sidebarStatus.emit(value);
-      this.activeSidebar = !this.activeSidebar;
-    }
-    // #endregion
 
   // #region READONLY VARIABLES
   public readonly iconVSC: string = '../../../../assets/images/vsc.png';
@@ -47,19 +41,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // #region VARIABLES
   public activeRoute: string = 'Home';
   public activeLang!: string;
-  public activeSidebar: boolean = true;
+  public sidebarActive: boolean = false;
 
   private listObservers$: Array<Subscription> = [];
   // #endregion
   
   // #region CONSTRUCTOR & LIFECYCLE HOOKS
-  constructor(private _ls: LanguageService, private _ts: TranslateService, private _rs: RouteService) {}
+  constructor(private _ls: LanguageService, private _ts: TranslateService, private _rs: RouteService, private _sss: SidebarStatusService) {}
 
   ngOnInit(): void {
     const observableLang$ = this.getInitialLang();
     const observableRoute$ = this.getActiveRoute();
+    const observableSidebar$ = this.suscribeToSidebarStatusService();
 
-    this.listObservers$ = [observableLang$, observableRoute$];
+    this.listObservers$ = [observableLang$, observableRoute$, observableSidebar$];
   }
 
   ngOnDestroy() {
@@ -99,6 +94,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.showLangList = false;
       }
     }
+  }
+
+  private suscribeToSidebarStatusService(): Subscription {
+    return this._sss.getSidebarActive().subscribe((isActive: boolean) => {
+      this.sidebarActive = isActive;
+    });
+  }
+
+  public switchSidebarStatus(value: boolean): void {
+    this._sss.setSidebarActive(value);
   }
   // #endregion
 

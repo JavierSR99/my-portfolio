@@ -2,7 +2,7 @@
   <li *ngFor="let item of menuItems" class="p-flexcs u-gap-4 u-mb-2"
     [class.u-ps-4]="item.type === 1" [class.c-menu__link--active]="activeRoute === item.link"
     [class.c-menu__link]="item.link" [ngClass]="item.type === 0 ? 'c-menu__item--parent' : 'c-menu__item--child'"
-    (click)="goToRoute(item)"
+    (click)="goToRoute(item); closeSidebar()"
   >
     <i *ngIf="item.type === 0" class="bi"
       [ngClass]="item.parentOpen === true ? 'bi-chevron-down' : 'bi-chevron-right'"></i>
