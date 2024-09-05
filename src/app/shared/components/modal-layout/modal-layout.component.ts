@@ -2,8 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'jav-modal-layout',
-  templateUrl: './modal-layout.component.html',
-  styleUrls: ['./modal-layout.component.scss']
+  templateUrl: './modal-layout.component.html'
 })
 export class ModalLayoutComponent implements OnInit {
 

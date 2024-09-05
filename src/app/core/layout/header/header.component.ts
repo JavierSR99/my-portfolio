@@ -3,8 +3,8 @@ import { LanguageService } from '../../services/language.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IDropdownListItem, IDropdownPosition } from 'src/app/core/models/interfaces/dropdown-list.interface';
 import { Subscription } from 'rxjs';
-import { RouteService } from '../../services/route.service';
 import { SidebarStatusService } from 'src/app/shared/services/sidebar-status.service';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'jav-header',
@@ -47,14 +47,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // #endregion
   
   // #region CONSTRUCTOR & LIFECYCLE HOOKS
-  constructor(private _ls: LanguageService, private _ts: TranslateService, private _rs: RouteService, private _sss: SidebarStatusService) {}
+  constructor(private _ls: LanguageService, private _ts: TranslateService,
+    private _sss: SidebarStatusService,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {
     const observableLang$ = this.getInitialLang();
     const observableRoute$ = this.getActiveRoute();
     const observableSidebar$ = this.suscribeToSidebarStatusService();
 
-    this.listObservers$ = [observableLang$, observableRoute$, observableSidebar$];
+    this.listObservers$ = [observableLang$, observableRoute$ ,observableSidebar$];
   }
 
   ngOnDestroy() {
@@ -73,8 +76,21 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   public getActiveRoute(): Subscription {
-    return this._rs.activeRoute$.subscribe((res) => {
-      this.activeRoute = res;
+    return this._router.events.subscribe(value => {
+      if (value instanceof NavigationEnd) {
+        switch (value.url) {
+          case '/':
+          default:
+            this.activeRoute = 'HOME';
+            break;
+          case '/cv':
+            this.activeRoute = 'CV';
+            break;
+          case '/contact':
+            this.activeRoute = 'CONTACT';
+            break;
+        }
+      }
     });
   }
 

@@ -24,15 +24,15 @@
     "JOBS" : {
       "YUB" : {
         "TIME" : "Octubre 2020 - Mayo 2021",
-        "DESCRIPTION" : "Realicé las prácticas del CFGS de 'Desarrollo de Aplicaciones Web' aquí, trabajando como Full Stack con tecnologías como PHP, JQuery o MySQL. Después fui contratado, pero las responsabilidades ya estaban desde el primer día de prácticas."
+        "DESCRIPTION" : "Realicé las prácticas del CFGS de 'Desarrollo de Aplicaciones Web' aquí, trabajando como Full Stack con tecnologías como PHP, JQuery o MySQL. Después fui contratado, pero las responsabilidades ya estaban desde el primer día de prácticas. <br><br> En el día a día, mi labor se resumía en desarrollar nuevas funcionalidades para la web principal de la empresa (sobre todo a nivel front). También mantenía y actualizaba webs de clientes, que no dejaban de ser la misma web pero cada una con sus estilos personalizados."
       },
       "ARATECH" : {
         "TIME" : "Mayo 2021 - Febrero 2022",
-        "DESCRIPTION" : "En esta empresa empecé a enfocarme en el front-end al 100%, realizando diversos proyectos con Angular como framework principal. También utilicé otras tecnologías, así como Prestashop, Wordpress y Vue."
+        "DESCRIPTION" : "En esta empresa empecé a enfocarme en el front-end al 100%, realizando diversos proyectos con Angular como framework principal. También utilicé otras tecnologías, así como Prestashop, Wordpress y Vue. <br><br> Mi labor inicial fue desarrollar un e-commerce B2B trabajando directamente con cliente y, una vez finalizado el desarrollo, me empecé a hacer cargo de varios proyectos de los que se encargaba la consultora, entre los que se podían incluir webs para hacer reservas de campings, torneos de e-sports, etc."
       },
       "ICP" : {
         "TIME" : "Febrero 2022 - Actualidad",
-        "DESCRIPTION" : "Surgió la oportunidad de empezar un departamento front-end desde cero, entre otro compañero y yo. Juntos, creamos una arquitectura front propia para la empresa, que iríamos mejorando con el tiempo, según iba creciendo el equipo."
+        "DESCRIPTION" : "Surgió la oportunidad de empezar un departamento front-end desde cero, entre un compañero más senior y yo. Juntos, creamos una arquitectura front propia para la empresa, que iríamos mejorando con el tiempo, según iba creciendo el equipo. <br><br> El objetivo principal del equipo es encargarse de toda la interfaz visual de las aplicaciones (internas o para cliente) de la empresa, utilizando Angular y Blazor como frameworks. Toda la arquitectura de estilos se ha desarrollado con Sass."
       }
     }
   },

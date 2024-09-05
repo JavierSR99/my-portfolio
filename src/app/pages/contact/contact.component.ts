@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
     {
       name : 'YouTube',
       logo : 'bi-youtube',
-      link : 'https://www.youtube.com/@CodigoJS',
+      link : 'https://www.youtube.com/c/C%C3%B3digoJS',
       bgColor : '#C4302B'
     },
     {

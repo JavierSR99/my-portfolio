@@ -24,20 +24,20 @@
     "JOBS" : {
       "YUB" : {
         "TIME" : "October 2020 - May 2021",
-        "DESCRIPTION" : "Realicé las prácticas del CFGS de 'Desarrollo de Aplicaciones Web' aquí, trabajando como Full Stack con tecnologías como PHP, JQuery, MySQL, Bootstrap, etc."
+        "DESCRIPTION" : "I completed the internship for my degree in Web Application Development here, working as a Full Stack developer with technologies such as PHP, JQuery, and MySQL. Later, I was hired, but the responsibilities had already been in place since the first day of the internship. <br><br> On a daily basis, my work involved developing new features for the company's main website (mostly on the front-end). I also maintained and updated client websites, which were essentially the same website but each with its own custom styles."
       },
       "ARATECH" : {
         "TIME" : "May 2021 - February 2022",
-        "DESCRIPTION" : "PRUEBA"
+        "DESCRIPTION" : "In this company, I began to focus 100% on front-end development, working on various projects using Angular as the main framework. I also used other technologies, such as Prestashop, WordPress, and Vue. <br><br> My initial task was to develop a B2B e-commerce platform, working directly with the client. Once the development was completed, I started taking charge of several projects managed by the consultancy, which included websites for booking campgrounds, e-sports tournaments, and more."
       },
       "ICP" : {
         "TIME" : "February 2022 - Now",
-        "DESCRIPTION" : "PRUEBA"
+        "DESCRIPTION" : "I was given the opportunity to start a front-end department from scratch, alongside a more senior colleague and me. Together, we created a custom front-end architecture for the company, which we would improve over time as the team grew. <br><br> The main goal of the team is to handle the entire visual interface of the company's applications (whether internal or for clients), using Angular and Blazor as frameworks. The entire style architecture has been developed with Sass."
       }
     }
   },
   "CONTACT" : {
-    "DESCRIPTION" : "You know a little more about me here:"
+    "DESCRIPTION" : "You'll know a little more about me here:"
   },
   "GENERICS" : {
     "SEE_MORE" : "See more"

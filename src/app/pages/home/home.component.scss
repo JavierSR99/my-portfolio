@@ -1,0 +1,20 @@
+@use "../../../scss/settings/variables" as v;
+
+$c: #{v.$prefix} + "home";
+
+#{$c} {
+
+  &__messages {
+    min-width: 450px;
+  }
+
+  &__hi {
+    font-size: v.$fs-64;
+    margin-top: 0;
+    margin-bottom: v.$fs-16;
+  }
+
+  &__message {
+    font-size: v.$fs-32;
+  }
+}

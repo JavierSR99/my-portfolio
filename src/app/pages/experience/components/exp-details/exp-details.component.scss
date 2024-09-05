@@ -1,0 +1,11 @@
+@use "~/src/scss/settings/variables" as v;
+@use "~/src/scss/tools/media-queries" as mq;
+
+$c: #{v.$prefix} + "exp-details";
+
+#{$c} {
+  &__close {
+    top: 0;
+    right: 0;
+  }
+}

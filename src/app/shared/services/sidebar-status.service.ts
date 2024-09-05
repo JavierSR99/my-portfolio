@@ -6,15 +6,15 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SidebarStatusService {
 
-  public sidebarActive: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public sidebarActive$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor() { }
 
   getSidebarActive() {
-    return this.sidebarActive.asObservable();
+    return this.sidebarActive$.asObservable();
   }
   
   setSidebarActive(isActive: boolean) {
-    this.sidebarActive.next(isActive);
+    this.sidebarActive$.next(isActive);
   }
 }

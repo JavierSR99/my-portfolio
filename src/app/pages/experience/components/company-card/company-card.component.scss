@@ -59,5 +59,17 @@ $c: #{v.$prefix} + "company-card";
     overflow-wrap: break-word;
     text-overflow: ellipsis;
   }
+
+  &__seemore {
+    span {
+      color: map-get($map: v.$color-map, $key: "comp1");
+      cursor: pointer;
+
+      &:hover, &:focus, &:focus-visible  {
+        outline: none;
+        text-decoration: underline;
+      }
+    }
+  }
   // #endregion ELEMENTS
 }

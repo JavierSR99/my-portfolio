@@ -18,6 +18,13 @@
     </div>
   </div>
   <div class="jav-company-card__seemore u-text-right">
-    <a href="#"> {{ 'GENERICS.SEE_MORE' | translate }} </a>
+    <span role="button" tabindex="0" (click)="showDetails()" (keyup.enter)="showDetails()"> {{ 'GENERICS.SEE_MORE' | translate }} </span>
   </div>
 </div>
+
+
+<jav-modal-layout *ngIf="seeMore" [wrapperWidth]="'60%'">
+  <div body>
+    <jav-exp-details [data]="data" (closeDetails)="closeDetails()"></jav-exp-details>
+  </div>
+</jav-modal-layout>
