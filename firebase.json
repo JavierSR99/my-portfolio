@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "javiersanz",
+    "public": "dist/my-portfolio",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
