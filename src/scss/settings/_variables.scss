@@ -19,7 +19,9 @@ $font-sizes-map : (
 $fs-12: map-get($font-sizes-map, "12");
 $fs-14: map-get($font-sizes-map, "14");
 $fs-16: map-get($font-sizes-map, "16");
+$fs-24: map-get($font-sizes-map, "24");
 $fs-32: map-get($font-sizes-map, "32");
+$fs-40: map-get($font-sizes-map, "40");
 $fs-64: map-get($font-sizes-map, "64");
 
 // COLOR
@@ -36,7 +38,8 @@ $color-map: (
   "black" : #000,
   "white" : #FFF,
 
-  "comp1" : #03698f
+  "comp1" : #03698f,
+  "comp2" : #F92653
 );
 
 // BREAKPOINTS 

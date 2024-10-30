@@ -1,4 +1,5 @@
 @use "../../../scss/settings/variables" as v;
+@use "~/src/scss/tools/media-queries" as mq;
 
 $c: #{v.$prefix} + "home";
 
@@ -6,6 +7,10 @@ $c: #{v.$prefix} + "home";
 
   &__messages {
     min-width: 450px;
+
+    @include mq.max-width(v.$bp-md) {
+      padding-inline: 50px;
+    }
   }
 
   &__hi {
@@ -15,6 +20,16 @@ $c: #{v.$prefix} + "home";
   }
 
   &__message {
-    font-size: v.$fs-32;
+    font-size: v.$fs-40;
+  }
+
+  &__links {
+
+    margin-top: 50px;
+
+    a {
+      color: map-get($map: v.$color-map, $key: "white");
+      font-size: v.$fs-24;
+    }
   }
 }

@@ -29,7 +29,7 @@
 @mixin generate-double-value-utility($first-map, $second-map, $prop, $label) {
   
   // VALIDAMOS QUE LOS MAPAS SEAN CORRECTOS
-  @if (f.is-type($first-map, "map") && f.is-type($second-map, "map")) {
+  @if (f.is-type($first-map, "map") and f.is-type($second-map, "map")) {
 
     $first-keys: map-keys($map: $first-map);
     $second-keys: map-keys($map: $second-map);
@@ -80,7 +80,7 @@
       es la misma para todos los casos
 */
 @mixin generate-dynamic-property-utility ($map, $measures, $prop, $label) {
-  @if (f.is-type($map, "map") && f.is-type($measures, "map")) {
+  @if (f.is-type($map, "map") and f.is-type($measures, "map")) {
     $keys: map-keys($map: $map);
     $measure-keys: map-keys($map: $measures);
 
