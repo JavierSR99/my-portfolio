@@ -4,6 +4,23 @@
 $c: #{v.$prefix} + "exp-details";
 
 #{$c} {
+
+  &__logo {
+    width: 10%;
+
+    @include mq.max-width(1200px) {
+      width: 30%;
+    }
+  }
+
+  &__title {
+    width: 90%;
+
+    @include mq.max-width(1200px) {
+      width: 70%;
+    }
+  }
+  
   &__close {
     top: 0;
     right: 0;

@@ -2,5 +2,6 @@ export interface ICompaniesCard {
   title: string,
   logo: string,
   description: string,
-  timeline : string
+  timeline : string,
+  techs : string[]
 }

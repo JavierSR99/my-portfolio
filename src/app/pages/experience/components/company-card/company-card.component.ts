@@ -14,7 +14,8 @@ export class CompanyCardComponent implements OnInit {
     title: '',
     logo: '',
     description: '',
-    timeline : ''
+    timeline : '',
+    techs : []
   };
   // #endregion
 

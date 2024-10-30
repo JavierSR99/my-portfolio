@@ -16,7 +16,8 @@ export class ExpDetailsComponent implements OnInit {
     title: '',
     logo: '',
     description: '',
-    timeline : ''
+    timeline : '',
+    techs : []
   };
 
   @Output() closeDetails = new EventEmitter<boolean>();
