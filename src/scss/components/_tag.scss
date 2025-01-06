@@ -5,7 +5,7 @@
   --comp3: #{map-get($map: v.$color-map, $key: "comp3")};
 
   border-radius: 10px;
-  cursor: pointer;
+  cursor: default;
   font-size: v.$fs-12;
   font-weight: 500;
   padding: 4px 6px;

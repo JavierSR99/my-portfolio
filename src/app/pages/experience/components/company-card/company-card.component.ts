@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ICompaniesCard } from 'src/app/core/models/interfaces/companies-card.interface';
 
 @Component({
@@ -8,7 +8,14 @@ import { ICompaniesCard } from 'src/app/core/models/interfaces/companies-card.in
 })
 export class CompanyCardComponent implements OnInit {
 
-  
+  // #region HostListener
+  @HostListener("window:resize", []) setModalWidth() {
+    if (window.innerWidth <= 900) {
+      this.modalWidth = "80%";
+    }
+  }
+  // #endregion
+
   // #region INPUTS & OUTPUTS
   @Input() data: ICompaniesCard = {
     title: '',
@@ -21,6 +28,8 @@ export class CompanyCardComponent implements OnInit {
 
   // #region VARIABLES
   public seeMore: boolean = false;
+
+  public modalWidth: string = "60%";
   // #endregion
 
   // #region CONSTRUCTOR & LIFECYCLE HOOKS
