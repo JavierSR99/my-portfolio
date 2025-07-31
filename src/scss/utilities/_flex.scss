@@ -10,5 +10,5 @@ $direction: ( "col" : column, "row" : row );
 @include g.generate-simple-utility($direction, "flex-direction", "fdir");
 
 // GAP
-$gap: ( "2" : 2px, "8" : 8px, "16" : 16px, "24" : 24px, "64" : 64px );
+$gap: ( "2" : 2px, "8" : 8px, "16" : 16px, "24" : 24px, "32" : 32px ,"64" : 64px );
 @include g.generate-simple-utility($gap, "gap", "gap");

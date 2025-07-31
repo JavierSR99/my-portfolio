@@ -1,10 +1,36 @@
 @use "../../../scss/settings/variables" as v;
+@use "../../../scss/tools/media-queries" as mq;
 
 $c: #{v.$prefix} + "contact";
 
 #{$c} {
 
-  &__sites {
+  $self: &;
+
+  &__body {
+    @include mq.xs-device {
+      flex-direction: column;
+
+      #{$self}__sites {
+        flex-direction: row;
+      }
+
+    }
+  }
+
+  &__linkedin {
+    @include mq.max-width(v.$bp-md) {
+      display: none;
+    }
+
+    &--sm {
+
+      
+
+      @include mq.min-width(v.$bp-md) {
+        display: none;
+      }
+    }
   }
 
   &__logo {

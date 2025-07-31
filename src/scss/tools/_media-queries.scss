@@ -36,6 +36,10 @@
   @media (max-width: $bp) { @content; }
 }
 
+@mixin min-width ($bp) {
+  @media (min-width: $bp) { @content; }
+}
+
 @mixin min-max-width ($min, $max) {
   @media (min-width: $min) and (max-width: $max) { @content; }
 }
