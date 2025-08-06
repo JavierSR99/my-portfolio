@@ -16,6 +16,7 @@ import { PageTitleComponent } from './shared/components/page-title/page-title.co
 import { CompanyCardComponent } from './pages/experience/components/company-card/company-card.component';
 import { ModalLayoutComponent } from './shared/components/modal-layout/modal-layout.component';
 import { ExpDetailsComponent } from './pages/experience/components/exp-details/exp-details.component';
+import { CardComponent } from './shared/components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ExpDetailsComponent } from './pages/experience/components/exp-details/e
     PageTitleComponent,
     CompanyCardComponent,
     ModalLayoutComponent,
-    ExpDetailsComponent
+    ExpDetailsComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

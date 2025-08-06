@@ -1,0 +1,37 @@
+@use "~/src/scss/settings/variables" as v;
+
+.c-btn {
+
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 4px 16px;
+    width: fit-content;
+
+    &--linkedin {
+
+        @extend .c-btn;
+
+        background-color: map-get($map: v.$color-map, $key: "white");
+        border: 1px solid map-get($map: v.$color-map, $key: "linkedin1");
+        color: map-get($map: v.$color-map, $key: "linkedin1");
+
+        &:hover {
+            background-color: rgba(112, 181, 249, 0.15);
+            box-shadow: inset 0 0 0 1px map-get($map: v.$color-map, $key: "linkedin1");
+        }
+    }
+
+    &--github {
+        @extend .c-btn;
+
+        background-color: map-get($map: v.$color-map, $key: "white");
+        border: 1px solid map-get($map: v.$color-map, $key: "dark-secondary");
+        color: map-get($map: v.$color-map, $key: "dark-secondary");
+
+        &:hover {
+            background-color: rgba(112, 181, 249, 0.15);
+            box-shadow: inset 0 0 0 1px map-get($map: v.$color-map, $key: "dark-secondary");
+        }
+    }
+}

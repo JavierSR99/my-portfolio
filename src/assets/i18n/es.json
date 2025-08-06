@@ -36,10 +36,21 @@
       }
     }
   },
+  "CARDS" : {
+    "LINKEDIN" : {
+      "DESCRIPTION" : "Desarrollador Web Front-End | Arquitecto CSS (BEMIT) |  Angular • Sass • UI/UX Oriented"
+    },
+    "GITHUB" : {
+      "DESCRIPTION" : "Aquí puedes ver mis proyectos (los pocos que tengo públicos 🤣)"
+    }
+  },
   "CONTACT" : {
     "DESCRIPTION" : "Puedes contactarme y saber más sobre mí en estos sitios web:"
   },
   "GENERICS" : {
     "SEE_MORE" : "Ver más"
+  },
+  "BTNS" : {
+    "SEE_PROFILE" : "Ver perfil"
   }
 }

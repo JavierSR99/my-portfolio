@@ -1,22 +1,9 @@
 <div class="jav-contact u-w-per-100 u-h-per-100 p-flexcc u-dir-col">
   <jav-page-title [title]="'PAGES.CONTACT' | translate" [description]="'CONTACT.DESCRIPTION' | translate"></jav-page-title>
   
-  <div class="jav-contact__body p-flexcs u-gap-64">
-    <div class="jav-contact__linkedin badge-base LI-profile-badge" data-locale="es_ES" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="javier-sanz-roa" data-version="v1"></div>
-
-    <div>
-      <div class="jav-contact__linkedin--sm badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="javier-sanz-roa" data-version="v1"></div>
-    </div>              
-
-    <div class="jav-contact__sites u-ds-flex u-dir-col u-justify-center u-gap-64">
-      <a *ngFor="let item of sites"
-        class="jav-contact__logo p-flexcc" [ngStyle]="{ 'background-color' : item.bgColor}"
-        [href]="item.link" target="_blank"
-      >
-        <i class="bi" [ngClass]="item.logo"></i>
-      </a>
+  <div class="jav-contact__body p-flexcs u-gap-64 u-fwrap-wrap">
+    <div *ngFor="let item of cards">
+      <jav-card [cardInfo]="item.card" [customColors]="item.colors" [btnType]="item.btnType"></jav-card>
     </div>
   </div>
-
-
 </div>
