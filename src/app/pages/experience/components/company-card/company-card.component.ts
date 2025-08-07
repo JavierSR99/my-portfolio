@@ -10,9 +10,7 @@ export class CompanyCardComponent implements OnInit {
 
   // #region HostListener
   @HostListener("window:resize", []) setModalWidth() {
-    if (window.innerWidth <= 900) {
-      this.modalWidth = "80%";
-    }
+    this.setModalSizeResponsive();
   }
   // #endregion
 
@@ -36,6 +34,7 @@ export class CompanyCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.setModalSizeResponsive();
   }
   // #endregion
 
@@ -46,6 +45,12 @@ export class CompanyCardComponent implements OnInit {
 
   public closeDetails(): void {
     this.seeMore = false;
+  }
+
+  private setModalSizeResponsive(): void {
+    if (window.innerWidth <= 900) {
+      this.modalWidth = "90%";
+    }
   }
   // #endregion
 
