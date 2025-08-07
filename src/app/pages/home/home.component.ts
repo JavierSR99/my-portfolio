@@ -1,37 +1,32 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/core/services/language.service';
 import TypeIt from "typeit";
 import { ITypeitText } from './interfaces/typeit-text.interface';
+import { TYPEIT_ES, TYPEIT_EN, DELETE_EN, DELETE_ES } from './constants/typeit.constants';
 
 @Component({
   selector: 'jav-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   //#region READONLY VARIABLES
-  private readonly typeitSpanish: ITypeitText = {
-    hi: "Hola,",
-    iam: "soy",
-    name: "Javier Sanz",
-    job1: "desarrollador web",
-    job2: "arquitecto BEMIT"
-  };
+  private readonly typeitSpanish: ITypeitText = TYPEIT_ES;
+  private readonly deleteSpanish: number[] = DELETE_ES;
 
-  private readonly typeitEnglish: ITypeitText = {
-    hi: "Hello,",
-    iam: "I am",
-    name: "Javier Sanz",
-    job1: "web developer",
-    job2: "BEMIT architect"
-  };
+  private readonly typeitEnglish: ITypeitText = TYPEIT_EN;
+  private readonly deleteEnglish: number[] = DELETE_EN;
   //#endregion
 
   //#region VARIABLES
+  public shouldRender: boolean = true;
   private activeLang: "es" | "en" | "" = "";
-  public textComplete: boolean = false;
+  public textCompleted: boolean = false;
+
+  private firstTypeitInstance?: TypeIt;
+  private secondTypeitInstance?: TypeIt;
 
   private listObservers$: Array<Subscription> = [];
   //#endregion
@@ -41,9 +36,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const observableLang$ = this.getLang();
-    
-    this.activeLang == "es" ? this.generateFirstString(this.typeitSpanish) : this.generateFirstString(this.typeitEnglish);
+  }
 
+  ngAfterViewInit(): void {
+      this.activeLang == "es" ? this.generateFirstString(this.typeitSpanish, this.deleteSpanish) : this.generateFirstString(this.typeitEnglish, this.deleteEnglish);
   }
 
   ngOnDestroy() {
@@ -56,47 +52,74 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this._ls.activeLanguage$.subscribe((lang: string) => {
       if (this.activeLang == "") { this.activeLang = lang as "es" | "en"; }
       else if (this.activeLang !== lang) {
+       this.activeLang = lang as "es" | "en";
 
+        this.shouldRender = false;
+        this.textCompleted = false;
+        setTimeout(() => {
+          this.shouldRender = true;
+        }, 100);
+        this.activeLang == "es" ? this.generateFirstString(this.typeitSpanish, this.deleteSpanish) : this.generateFirstString(this.typeitEnglish, this.deleteEnglish);
       }
-
-
     });
   }
 
-  private generateFirstString(lang: ITypeitText): void {
-
-    new TypeIt("#hi-message", {
-      cursor: false,
-      speed: 100,
-      waitUntilVisible: true,
-      afterComplete: async () => {
-        this.generateSecondString(lang);
-      }
-    }).type(lang.hi, { delay: 200 })
-    .go();
+  private generateFirstString(lang: ITypeitText, deletes: number[]): void {
+    setTimeout(() => {
+      new TypeIt("#hi-message", {
+        cursor: false,
+        speed: 100,
+        waitUntilVisible: true,
+        afterComplete: async () => {
+          this.generateSecondString(lang, deletes);
+        }
+      }).type(lang.hi, { delay: 200 })
+      .go();
+    }, 100);
   }
 
-  private generateSecondString(lang: ITypeitText): void {
-    new TypeIt("#iam-message", {
+  private generateSecondString(lang: ITypeitText, deletes: number[]): void {
+
+    const iamElement = document.getElementById('iam-message');
+    if (!iamElement) return;
+
+    iamElement.innerHTML = '';
+
+    // Detener la animación anterior si está activa
+    if (this.secondTypeitInstance) {
+      this.secondTypeitInstance.destroy();
+      this.secondTypeitInstance = undefined;
+    }
+
+    this.secondTypeitInstance = new TypeIt("#iam-message", {
       loop: false,
       speed: 75,
       waitUntilVisible: true,
       afterComplete: () => {
-        this.textComplete = true;
+        this.textCompleted = true;
       }
     }).type(lang.iam, { delay: 200 })
     .pause(200)
     .type(`<span class='u-color-comp2'> ${lang.name} </span>`)
     .pause(1000)
-    .delete(12)
+    .delete(deletes[0])
     .type(`<span class='u-color-comp1'> ${lang.job1} </span>`)
     .pause(1000)
-    .delete(18)
+    .delete(deletes[1])
     .type(`<span class='u-color-comp1'> ${lang.job2} </span>`)
     .pause(1000)
-    .delete(17)
+    .delete(deletes[2])
     .type(`<span class='u-color-comp2'> ${lang.name} </span>`)
     .go();
+  }
+
+  
+  public cleanMessage(): void {
+    const hiEl = document.getElementById('hi-message');
+    const iamEl = document.getElementById('iam-message');
+
+    if (hiEl) hiEl.textContent = '';
+    if (iamEl) iamEl.textContent = '';
   }
   //#endregion
 }
