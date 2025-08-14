@@ -13,7 +13,7 @@ export const CARD_DATA: { card: ICard; colors: ICardColors, btnType: string }[] 
     colors: {
       header : '#e9e5df', content : '#FFF', icon : '#0a66c2'
     },
-    btnType : "c-btn--linkedin"
+    btnType : 'c-btn--linkedin'
   },
   {
     card: {
@@ -26,6 +26,19 @@ export const CARD_DATA: { card: ICard; colors: ICardColors, btnType: string }[] 
     colors: {
       header : '#1E1F1C', content : '#FFF', icon : '#FFF'
     },
-    btnType : "c-btn--github"
+    btnType : 'c-btn--github'
+  },
+  {
+    card : {
+      image : 'assets/images/profiles/logo-yt.jpg',
+      icon : 'bi-youtube',
+      name : 'Código JS',
+      description : 'CARDS.YOUTUBE.DESCRIPTION',
+      link : 'https://www.youtube.com/c/C%C3%B3digoJS'
+    },
+    colors: {
+      header : '#e1002d', content : '', icon : ''
+    },
+    btnType : 'c-btn--yt'
   }
 ];
