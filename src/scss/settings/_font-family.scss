@@ -1,2 +1,37 @@
 // IMPORT AND/OR DECLARE FONT-FAMILY
+
+/* Roboto (secondary font imporrted from Google in case VIctor Mono doesn't work) */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$font-display-swap: swap;
+$font-style-normal: normal;
+
+/* Victor Mono - Regular */
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/assets/fonts/VictorMono-Regular.woff2") format("woff2"),
+       url("/assets/fonts/VictorMono-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: $font-style-normal;
+  font-display: $font-display-swap;
+}
+
+/* Victor Mono - Italic */
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/assets/fonts/VictorMono-Italic.woff2") format("woff2"),
+       url("/assets/fonts/VictorMono-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: $font-display-swap;
+}
+
+/* Victor Mono - Bold */
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/assets/fonts/VictorMono-Bold.woff2") format("woff2"),
+       url("/assets/fonts/VictorMono-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: $font-style-normal;
+  font-display: $font-display-swap;
+}

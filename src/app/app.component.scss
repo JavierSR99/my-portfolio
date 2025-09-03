@@ -1,4 +1,5 @@
 @use "../scss/tools/media-queries" as mq;
+@use "../scss/settings/variables" as v;
 
 .app-container {
   &__sidebar {
@@ -18,6 +19,7 @@
   }
   
   &__content {
+     font-family: v.$font-family-main;
     width: 100%;
 
     @include mq.xs-device {
