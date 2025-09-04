@@ -5,6 +5,8 @@ import { IDropdownListItem, IDropdownPosition } from 'src/app/core/models/interf
 import { Subscription } from 'rxjs';
 import { SidebarStatusService } from 'src/app/shared/services/sidebar-status.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { Lang } from '../../models/types/lang.type';
+import { SUPPORTED_LANGS } from '../../models/types/lang.type';
 
 @Component({
   selector: 'jav-header',
@@ -33,8 +35,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public clickLang: boolean = true;
   public flagsPosition: IDropdownPosition = { right: '-10px', top: '29px' };
   public flagsList: IDropdownListItem[] = [
-    { label : 'Español', value: 'es', image: '../../../../assets/icons/flags/es.png', alt: 'es' },
-    { label : 'English', value: 'en', image: '../../../../assets/icons/flags/en.png', alt: 'en' }
+    { label : 'Español', value: SUPPORTED_LANGS[0], image: '../../../../assets/icons/flags/es.png', alt: 'es' },
+    { label : 'English', value: SUPPORTED_LANGS[1], image: '../../../../assets/icons/flags/en.png', alt: 'en' }
   ];
   // #endregion
 
@@ -94,13 +96,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
-  public switchLanguage(value: string | number | boolean): void {
-    let newLang = value;
-    if (typeof newLang === 'string') {
-      this.activeLang = newLang;
-      this._ts.use(newLang);
-      this._ls.setActiveLang(newLang);
-    }
+  public switchLanguage(value: Lang): void {
+    this.activeLang = value;
+    this._ts.use(value);
+    this._ls.setActiveLang(value);
     this.showLangList = false;
   }
 

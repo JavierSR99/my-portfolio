@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, HostListener, ElementRef } from '@angular/core';
 import { IDropdownPosition, IDropdownListItem } from '../../../core/models/interfaces/dropdown-list.interface';
+import { Lang } from 'src/app/core/models/types/lang.type';
 
 @Component({
   selector: 'jav-dropdown-list',
@@ -14,8 +15,8 @@ export class DropdownListComponent implements OnInit {
   // #endregion
 
   // #region OUTPUTS
-  @Output() itemSelected = new EventEmitter<string | number | boolean>();
-  onItemSelected(value: string | number | boolean) {
+  @Output() itemSelected = new EventEmitter<Lang>();
+  onItemSelected(value: Lang) {
     this.itemSelected.emit(value);
   }
 

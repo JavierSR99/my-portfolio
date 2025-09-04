@@ -1,9 +1,11 @@
+import { Lang } from "../types/lang.type"
+
 export interface IDropdownListItem {
   label: string,
   icon?: string,
   image?: string,
   alt?: string,
-  value: string | number | boolean
+  value: Lang
 }
 
 export interface IDropdownPosition {
