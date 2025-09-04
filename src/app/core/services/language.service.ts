@@ -33,7 +33,10 @@ export class LanguageService {
       }
       localStorage.setItem('lang', value);
 
-    } else { this.activeLanguage$.next('es'); }
+    } else {
+      this.activeLanguage$.next('es');
+      if (localStorage.getItem('lang') != 'es') { localStorage.setItem('lang', 'es'); }
+    }
   }
 
   private validateAndSetLang(lang: string | undefined): void {
